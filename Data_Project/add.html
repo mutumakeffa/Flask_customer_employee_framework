@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Add product</title>
+</head>
+<body>
+
+<h1 class="jumbotron"> ADD PRODUCT</h1>
+
+<!-- POST method is more secure than GET -->
+<!-- After we hit submit we want it to take us to the route of add -->
+
+<!-- we also use jinja templating at the top of the form to show our message when the commit happens-->
+
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Success!</strong> {{ msg }}
+</div>
+
+ <div class="alert alert-warning alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong> {{ msg2 }}
+  </div>
+
+<!-- <h3 class=" alert alert-success alert-dismissible">{{ msg }}</h3>  -->
+
+
+<section class="row">
+<div class="container col-md-4 col-md-offset-4"> <!-- this contains the form -->
+    <form action="/add" method="post" enctype="multipart/form-data">      <!--this is to specifies how the image should be encoded and sent to the server-->
+
+        <label for="">Browse image</label>
+        <input type="file" name="file">
+
+
+        <br><br>
+        <input type="text" placeholder="Enter Your Name" name="p_name">
+
+        <br><br>
+        <input type="text" placeholder="Enter cost" name="cost">
+
+        <br><br>
+        <input type="text" placeholder="Add the type of product" name="p_type">
+
+        <br><br>
+        <input type="text" placeholder="Add a description of your product" name="p_desc">
+
+        <br><br>
+        <input type="text" placeholder="Enter your phone number" name="contact">
+
+        <br><br>
+        <input type="submit" class="btn btn-info">
+    </form>
+
+</div>
+
+</section>
+</body>
+</html>

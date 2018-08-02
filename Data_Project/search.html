@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <title>Search</title>
+</head>
+<body>
+    <h1 class="jumbotron">Search records and display</h1>
+
+    <div class="col-md-4 container-fluid">
+        <form action="/search" method="post">
+            <label for="x"> Enter employee first name </label>
+            <br>
+            <input type="text" name="f_name" id="x">
+            <input type="submit" class="btn btn-info">
+<!--
+            <label for="y"> Enter employee Last name </label>
+            <br>
+            <input type="text" name="l_name" id="y">
+            <input type="submit" class="btn btn-info">
+-->
+
+        </form>
+
+    </div>
+
+    <br><br>
+
+    <h2> Your Report </h2>
+    <br>
+    <h4 style="color: red;"> {{ msg }} </h4>
+
+    <br><br>
+    <table width="100%" class="table table-dark table-hover">
+
+    {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td><a href="" class="btn btn-info">MORE</a></td>
+
+        </tr>
+    {% endfor %}
+
+    </table>
+
+
+
+
+</body>
+</html>
